@@ -1,0 +1,23 @@
+{
+    "arrays": null,
+    "double_lists": null,
+    "hashtables": null,
+    "queues": null,
+    "singly_lists": null,
+    "stacks": null,
+    "trees": {
+        "tree": {
+            "elements": [
+                1,
+                2,
+                3,
+                6,
+                5,
+                8,
+                9,
+                10,
+                11
+            ]
+        }
+    }
+}

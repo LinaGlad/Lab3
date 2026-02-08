@@ -1,0 +1,17 @@
+{
+    "arrays": {
+        "arr": {
+            "elements": [
+                "hello"
+            ],
+            "length": 2,
+            "size": 1
+        }
+    },
+    "double_lists": null,
+    "hashtables": null,
+    "queues": null,
+    "singly_lists": null,
+    "stacks": null,
+    "trees": null
+}
