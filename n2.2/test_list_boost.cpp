@@ -15,8 +15,10 @@ BOOST_AUTO_TEST_CASE(AddBeforeAfterValid) {
     list.AddHead("center");
     list.AddElementBefore("before", "center");
     list.AddElementAfter("after", "center");
+    list.AddElementBefore("1", "after");
     BOOST_CHECK(list.SearchElement("before"));
     BOOST_CHECK(list.SearchElement("after"));
+    BOOST_CHECK(list.SearchElement("1"));
 }
 
 BOOST_AUTO_TEST_CASE(AddBeforeAfterInvalid) {
@@ -34,6 +36,9 @@ BOOST_AUTO_TEST_CASE(DeleteByValue) {
     list.AddElementAtTail("b");
     BOOST_CHECK_EQUAL(list.DeleteElementByValue("a"), "a");
     BOOST_CHECK_EQUAL(list.DeleteElementByValue("ghost"), "");
+    list.AddElementAtTail("c");
+    list.AddElementAtTail("d");
+    BOOST_CHECK_EQUAL(list.DeleteElementByValue("d"), "d");    
 }
 
 BOOST_AUTO_TEST_CASE(DeleteHeadTail) {
@@ -44,6 +49,10 @@ BOOST_AUTO_TEST_CASE(DeleteHeadTail) {
     list.AddElementAtTail("y");
     BOOST_CHECK_EQUAL(list.DeleteElementAtHead(), "x");
     BOOST_CHECK_EQUAL(list.DeleteElementAtTail(), "y");
+    list.AddHead("x");
+    list.AddElementAtTail("y");    
+    list.AddElementAtTail("z");
+    BOOST_CHECK_EQUAL(list.DeleteElementAtTail(), "z");    
 }
 
 BOOST_AUTO_TEST_CASE(DeleteBeforeAfterValid) {
@@ -51,6 +60,9 @@ BOOST_AUTO_TEST_CASE(DeleteBeforeAfterValid) {
     list.AddHead("1");
     list.AddElementAtTail("2");
     list.AddElementAtTail("3");
+    list.AddElementAtTail("4");
+    list.AddElementAtTail("5");
+    BOOST_CHECK_EQUAL(list.DeleteElementBefore("5"), "4");
     BOOST_CHECK_EQUAL(list.DeleteElementBefore("2"), "1");
     BOOST_CHECK_EQUAL(list.DeleteElementAfter("2"), "3");
 }
